@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Punkte System</title>
+  <link rel="icon" href="Favicon.ICO" type="image/x-icon">
+  <style>
+    .container{
+      display: flex;
+      justify-content: space-between;
+      height: 100vh;
+    }
+    .options{
+      height: 100vh;
+      width: 18%;
+    }
+    .Logo{
+      display: flex;
+      height: 14%;
+      border: none;
+      background-color: #d9d9d9;/*#d3d3d3;*/
+      border-radius: 10px;
+      margin-top: 5px;
+      justify-content: center;
+    }
+    .Logo img{
+      height: 95%;
+    }
+    .main {
+      display: flex;
+      justify-content: space-between;
+      height: 10%;
+      width: 80%;
+    }
+    .pointcontainer {
+      display: flex;
+      width: 35%;
+      height: 95%;
+      border-radius: 10px;
+      background-color: #d9d9d9;/*#d3d3d3;*/
+      justify-content: space-between;
+    }
+    .pointcontainer img{
+      height: 95%;
+      margin-left: 10px;
+    }
+    .pointcontainer h2 {
+      font-size: 45px;
+      margin-top: 5px;
+      margin-right: 15px;
+      text-align: right;
+    }
+    .profile {
+      display: flex;
+      width: 60%;
+      height: 98%;
+      background-color: #d9d9d9;/*#d3d3d3;*/
+      border-radius: 10px;
+      justify-content: space-between;
+      margin-right: -13%;
+      margin-left: 5%;
+    }
+    .profile img{
+      height: 90%;
+      padding: 4px;
+      border-radius: 50%;
+    }
+    .profile h2 {
+      font-size: 45px;
+      margin-top: 5px;
+    }
+    .TheEdit {
+      display: flex;
+      background-color: #a6a6a6;
+      border-radius: 10px;
+      width: 35%;
+      height: 100%;
+      justify-content: space-between;
+    }
+    .TheEdit img {
+      border-radius: 50%;
+      height: 45px;
+      width: 45px;
+      padding: 4px;
+    }
+    .TheEdit h2 {
+      color: #707070;
+      font-weight: bold;
+      font-size: 35px;
+      margin-top: 5px;
+      margin-left: 7px;
+    }
+    .display {
+      display: block;
+      height: 880%;
+      width: 100%;
+      border-radius: 10px;
+      background-color: #d9d9d9;/*#d3d3d3;*/
+      margin-top: 12%;
+      margin-left: -82%;
+      margin-right: 5%;
+    }
+    /* next */
+    /* one */
+    .CreditCard {
+      display: none;
+    }
+    .CreditCard img{
+      height: 300px;
+      margin: 11%;
+    }
+    .CreditCard .CardNumber {
+      position: absolute;
+      left: 41%;
+      font-size: 35px;
+      margin-top: -27%;
+      color: white;
+    }
+    .CreditCard .CardName {
+      position: absolute;
+      left: 35%;
+      font-size: 35px;
+      margin-top: -19%;
+      color: white;
+      text-align: left;
+    }
+    @media(min-width: 1100px){
+      .CreditCard .CardNumber {
+        left: 37%;
+        margin-top: -20%;
+      }
+      .CreditCard .CardName {
+        left: 33%;
+        margin-top: -15%;
+      }
+    }
+    /* next */
+    /* two */
+    .BonusCheck {
+      display: none;
+    }
+    .progress-container {
+        margin-top: 3%;
+        margin-left: 80px;
+        width: 80%;
+        background-color: #ccc;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .progress-bar {
+        height: 30px;
+        background-color: #4ca3dd;
+        width: 50%; /* Initial width */
+        border-radius: 20px 0 0 20px;
+        transition: 1s;
+    }
+    .progress-container2 {
+        margin-top: 3%;
+        margin-left: 80px;
+        width: 80%;
+        background-color: #ccc;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .progress-bar2 {
+        height: 30px;
+        background-color: #4ca3dd;
+        width: 50%; /* Initial width */
+        border-radius: 20px 0 0 20px;
+        transition: 1s;
+    }
+    .progress-container3 {
+        margin-top: 3%;
+        margin-left: 80px;
+        width: 80%;
+        background-color: #ccc;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .progress-bar3 {
+        height: 30px;
+        background-color: #4ca3dd;
+        width: 50%; /* Initial width */
+        border-radius: 20px 0 0 20px;
+        transition: 1s;
+    }
+    input[type=range] {
+        width: 80%;
+        display: none;
+    }
+    .Claim {
+      width: 90%;
+      height: 50px;
+      margin-left: 5%;
+      border: none;
+      border-radius: 10px;
+      color: black;
+      background-color: #4ca3dd;
+      font-size: 30px;
+    }
+    .allgoals {
+      display: flex;
+      width: 95%;
+      margin-left: 5%;
+      justify-content: space-between;
+    }
+    .progressc {
+      width: 100%;
+    }
+    /* next */
+    /* three */
+    .Progress {
+      /* flex */
+      display: none;
+      justify-content: space-between;
+    }
+    .progressvalues {
+      width: 20%;
+      height: 100%;
+      margin-top: 5%;
+      margin-left: 5%;
+    }
+    .progressvalues h2 {
+      margin-top: 5%;
+      margin-left: 2%;
+    }
+    .ProgressPic {
+      margin-top: 5%;
+      margin-right: 0px;
+      width: 80%;
+    }
+    .justifythis {
+      display: flex;
+      justify-content: space-between;
+    }
+    .justifythis img {
+      height: 30px;
+      margin-top: 5%;
+    }
+    .progresspicposition {
+      margin-right: -15%;
+    }
+    /* next */
+    /* four */
+    .Deals {
+      /* flex */
+      display: none;
+      justify-content: space-between;
+      margin: 3%;
+    }
+    .deals {
+      background-color: #a6a6a6;
+      border-radius: 10px;
+      width: 32%;
+      height: 270px;
+      align-items: center;
+    }
+    .deals h2 {
+      font-size: 20px;
+      margin-left: 5px;
+      margin-top: 5%;
+    }
+    .deals img {
+      width: 100px;
+      margin-left: 15%;
+      margin-top: 10%;
+    }
+    .deals button {
+      width: 90%;
+      height: 40px;
+      border: none;
+      border-radius: 10px;
+      color: black;
+      background-color: #d9d9d9;
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 5%;
+      margin-bottom: 2%;
+      margin-top: 8%;
+    }
+    /* next */
+    /* five */
+    .Settings {
+      display: block;
+    }
+    .settings img {
+      border-radius: 50%;
+    }
+    .editImageDiv input[type=text] {
+      font-size: 50px;
+      font-weight: bold;
+      margin-top: 10%;
+      border: none;
+      width: 30%;
+      background-color: transparent;
+    }
+    .profilepicture {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      margin-top: 5%;
+      margin-left: 5%;
+    }
+    /*.editImage {
+      height: 50px;
+      width: 50px;
+      margin-top: 135px;
+      margin-left: -100px;
+      border-radius: 50%;
+    }*/
+    .editUserName {
+      height: 100px;
+      width: 100px;
+      margin-top: 40%;
+      margin-right: 50px;
+      border-radius: 50%;
+    }
+    .editImageDiv {
+      display: flex;
+      justify-content: space-between;
+    }
+    .saveProfile {
+      width: 90%;
+      height: 10%;
+      border: none;
+      border-radius: 10px;
+      color: #d9d9d9;
+      background-color: #a6a6a6;
+      font-size: 49px;
+      font-weight: bold;
+      margin-left: 5%;
+      margin-bottom: 2%;
+      margin-top: 8%;
+    }
+    /* next */
+    /* six */
+    .CodeSearch {
+      display: none;
+    }
+    .pointsDisplay {
+      height: 159px;
+      width: 60%;
+      border-radius: 100px;
+      background-color: #a6a6a6;
+      color: black;
+    }
+    .pointsSign {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      background-color: #a6a6a6;
+    }
+    .pointsSign img {
+      height: 100px;
+      margin-top: 20px;
+      margin-left: 25px;
+    }
+    .valuedisplays {
+      margin-top: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .pointsDisplay h2 {
+      font-size: 70px;
+      font-weight: bold;
+      margin-top: 10%;
+      margin-left: 20%;
+      text-align: left;
+    }
+    /*if screen width 100%, margin-top: 5%;*/
+    @media(min-width: 1100px) {
+      .pointsDisplay h2 {
+        margin-top: 6%;
+      }
+    }
+    /*.CodeInput input[type=text] {
+      width: 80%;
+      height: 150px;
+      border: none;
+      border-radius: 100px;
+      color: black;
+      background-color: #a6a6a6;
+      font-size: 45px;
+      font-weight: bold;
+      margin-left: 5%;
+      margin-bottom: 2%;
+      margin-top: 8%;
+    }
+    .CodeInput input[type=text]:focus{
+      outline: none;
+    }
+    .CodeInput img {
+      height: 100px;
+      margin-left: -25%;
+      margin-bottom: -5%;
+    }*/
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        border: 2px solid #aaa;
+        border-radius: 100px;
+        padding: 5px 10px;
+        width: 100%;
+        /*max-width: 400px;*/
+        margin: 5%;
+        height: 150px;
+        background-color: #a6a6a6;
+    }
+
+    .search-box input {
+        border: none;
+        outline: none;
+        background-color: #a6a6a6;
+        flex: 1;
+        padding: 30px;
+        font-size: 40px;
+        border-radius: 50px;
+        color: #333;
+    }
+
+    .search-box input::placeholder {
+        color: #888;
+    }
+    .search-box button {
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .search-box button img {
+        width: 80px;
+        height: 80px;
+        margin-right: 25px;
+    }
+    /* change placeholder color */
+    ::placeholder {
+      color: #646464;
+    }
+    /* next */
+    .DealHistory {
+      display: none;
+    }
+    .DealHistory h2 {
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 10%;
+      margin-left: 5%;
+    }
+    .DealHistory button {
+      width: 90%;
+      height: 50px;
+      margin-top: 5%;
+      margin-left: 5%;
+      border: none;
+      border-radius: 10px;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #avatar{
+      display: none;
+    }
+    @keyframes shake {
+      0% { transform: translateX(-5px); }
+      25% { transform: translateX(5px); }
+      50% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+      100% { transform: translateX(0); }
+    }
+    .bar{
+      width: 5px;
+      background-color: white;
+      height: 100vh;
+      border-radius: 10px;
+    }
+    .minibar{
+      width: 100%;
+      height: 14%;
+      background-color: red;
+      border-radius: 10px;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="options">
+      <div class="Logo">
+        <img id="img1" src="CreditCardLogo.png" alt="point card" class="Optionimage">
+      </div>
+      <div class="Logo">
+        <img id="img2" src="CheckListLogo.png" alt="money check list" class="Optionimage">
+      </div>
+      <div class="Logo">
+        <img id="img3" src="ProgressStudsLogo.png" alt="Progress" class="Optionimage">
+      </div>
+      <div class="Logo">
+        <img id="img4" src="ProductListLogo.png" alt="product list" class="Optionimage">
+      </div>
+      <div class="Logo">
+        <img id="img5" src="SettingsLogo.png" alt="settings" class="Optionimage">
+      </div>
+      <div class="Logo">
+        <img id="img6" src="MoneyAccountLogo.png" alt="code search" class="Optionimage">
+      </div>
+      <div class="Logo">
+        <img id="img7" src="MoneyDealsLogo.png" alt="Deal history" class="Optionimage">
+      </div>
+    </div>
+    <div class="bar">
+      <div class="minibar"></div>
+    </div>
+    <div class="main">
+      <div class="pointcontainer">
+        <img src="PointSignLogo.png" alt="point sign" class="PointSign">
+        <h2 class="points" id="points">0</h2>
+      </div>
+      <div class="profile">
+        <img src="UploadLogo1.png" alt="profile picture" class="ProfilePicture">
+        <h2 class="UserName" id="UserName">Guest</h2>
+        <div class="TheEdit">
+          <h2 class="EditText" id="EditText">Edit</h2>
+          <img src="EditSignLogo.png" alt="edit sign" class="EditSign" id="EditSign">
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="display">
+        <div class="CreditCard">
+          <img src="CreditCardPic.png" alt="Point Card" class="Cardimage">
+          <h2 class="CardNumber" id="CardNumber">0000 0000 0000 0000</h2>
+          <h2 class="CardName" id="CardName">Guest</h2>
+        </div>
+        <div class="BonusCheck">
+          <div class="allgoals">
+            <h2 class="goals" id="goal1">+10</h2>
+            <div class="progressc">
+              <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+              </div>
+              <input type="range" id="progressRange" min="0" max="100" value="0" onchange="updateProgressBar()">
+            </div>
+          </div>
+          <div class="allgoals">
+            <h2 class="goals" id="goal2">+20</h2>
+            <div class="progressc">
+              <div class="progress-container2">
+                <div class="progress-bar2" id="progressBar2"></div>
+              </div>
+              <input type="range" id="progressRange2" min="0" max="100" value="0" onchange="updateProgressBar2()">
+            </div>
+          </div>
+          <div class="allgoals">
+            <h2 class="goals" id="goal3">+30</h2>
+            <div class="progressc">
+              <div class="progress-container3">
+                <div class="progress-bar3" id="progressBar3"></div>
+              </div>
+              <input type="range" id="progressRange3" min="0" max="100" value="0" onchange="updateProgressBar3()">
+            </div>
+          </div>
+          <button class="Claim" id="Claim">Claim</button>
+        </div>
+        <div class="Progress">
+          <div class="progressvalues">
+            <div class="justifythis">
+              <img src="PointSignLogo.png" alt="points" class="signfp">
+              <h2 class="Progress1" id="Progress1">-0</h2>
+            </div>
+            <br>
+            <div class="justifythis">
+              <img src="PointSignLogo.png" alt="points" class="signfp">
+              <h2 class="Progress2" id="Progress2">-0</h2>
+            </div>
+            <br>
+            <div class="justifythis">
+              <img src="PointSignLogo.png" alt="points" class="signfp">
+              <h2 class="Progress3" id="Progress3">-0</h2>
+            </div>
+            <br>
+            <div class="justifythis">
+              <img src="PointSignLogo.png" alt="points" class="signfp">
+              <h2 class="Progress4" id="Progress4">-0</h2>
+            </div>
+          </div>
+          <div class="progresspicposition">
+            <img src="ProgressPic.png" alt="Progress" class="ProgressPic">
+          </div>
+        </div>
+        <div class="Deals">
+          <div class="deals">
+            <img src="NoHomeWork.png">
+            <h2>keine hausaufgaben 1 mal</h2>
+            <button class="kh1m">-100</button>
+          </div>
+          <div class="deals">
+            <img src="NoAnswerPic.png">
+            <h2>nicht antworten 1 mal</h2>
+            <button class="na1m">-100</button>
+          </div>
+          <div class="deals">
+            <img src="NoSchareScreenPic.png">
+            <h2>keinen bildschirm teilen 1 mal</h2>
+            <button class="kbt1m">-100</button>
+          </div>
+        </div>
+        <div class="Deals">
+          <div class="deals">
+            <img src="Nachhilfepic.png">
+            <h2>nach-hilfe 1 mal</h2>
+            <button class="nh1m">-100</button>
+          </div>
+          <div class="deals">
+            <img src="DealPic.png">
+            <h2>abmachung 1 mal</h2>
+            <button class="a1m">-100</button>
+          </div>
+          <div class="deals">
+            <img src="SplitPic.png">
+            <h2>gruppen einteilen 1 mal</h2>
+            <button class="ge1m">-100</button>
+          </div>
+        </div>
+        <div class="Settings">
+          <div class="editImageDiv">
+            <label for="avatar" class="custom-file-input"><img src="UploadLogo1.png" alt="profile picture" class="profilepicture"></label>
+            <input type="text" id="usernameedit" class="usernameedit"></input>
+            <label for="usernameedit"><img src="EditSignLogo.png" alt="user name edit button" class="editUserName"></label>
+            <input type="file" id="avatar" accept="image/*">
+          </div>
+          <button type="submit" class="saveProfile" id="saveProfile">Save Profile</button>
+        </div>
+        <div class="CodeSearch">
+          <div class="valuedisplays">
+            <div class="pointsSign">
+              <img src="PointsSign2.png">
+            </div>
+            <div class="pointsDisplay">
+              <h2 class="pointsnum">0</h2>
+            </div>
+          </div>
+          <!--<div class="CodeInput">
+            <input type="text" placeholder="Search for codes" class="code-search">
+            <img src="CheckInputSign.png" alt="submit input" id="submitInput" class="submitInput">
+          </div>-->
+          <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Search for Code" class="code-search">
+                    <button>
+                        <img src="CheckInputSign.png" alt="Search Icon" id="submitInput" class="submitInput">
+                    </button>
+                </div>
+          </div>
+        </div>
+        <div class="DealHistory">
+          <button class="historys" id="history1">keine hausaufgaben 0 mal: </button>
+          <button class="historys" id="history2">nicht antworten 0 mal: </button>
+          <button class="historys" id="history3">keinen bildschirm teilen 0 mal: </button>
+          <button class="historys" id="history4">nach-hilfe 0 mal: </button>
+          <button class="historys" id="history5">abmachung 0 mal: </button>
+          <button class="historys" id="history6">gruppen einteilen 0 mal: </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let n1 = "0";
+    let n2 = "0";
+    let n3 = "0";
+    let n4 = "0";
+    let n5 = "0";
+    let n6 = "0";
+    let n7 = "0";
+    let n8 = "0";
+    let n9 = "0";
+    let n10 = "0";
+    let points = document.querySelector(".points");
+    let edit = document.querySelector(".TheEdit");
+    let username = document.querySelector(".UserName");
+    let CardName = document.querySelector(".CardName");
+    let CardNumber = document.querySelector(".CardNumber");
+    let claim = document.querySelector(".Claim");
+
+    let progress1 = document.querySelector(".Progress1");
+    let progress2 = document.querySelector(".Progress2");
+    let progress3 = document.querySelector(".Progress3");
+    let progress4 = document.querySelector(".Progress4");
+
+    let minibar = document.querySelector(".minibar");
+    let Logo = document.querySelector(".Logo");
+
+    let kbt1m = document.querySelector(".kbt1m");
+    let kh1m = document.querySelector(".kh1m");
+    let na1m = document.querySelector(".na1m");
+    let nh1m = document.querySelector(".nh1m");
+    let a1m = document.querySelector(".a1m");
+    let ge1m = document.querySelector(".ge1m");
+
+    let usernameedit = document.querySelector(".usernameedit");
+    let saveProfile = document.querySelector(".saveProfile");
+    let profilepicture = document.querySelector(".profilepicture");
+    let ProfilePicture = document.querySelector(".ProfilePicture");
+    let editSign = document.querySelector(".editSign");
+    let editImage = document.querySelector(".editImage");
+    let editUserName = document.querySelector(".editUserName");
+    let code_search = document.querySelector(".code-search");
+    let submitInput = document.querySelector(".submitInput");
+    let pointsnum = document.querySelector(".pointsnum");
+    let avatarInput = document.getElementById("avatar");
+    let pointcontainer = document.querySelector(".pointcontainer");
+
+    let history1 = document.getElementById("history1");
+    let history2 = document.getElementById("history2");
+    let history3 = document.getElementById("history3");
+    let history4 = document.getElementById("history4");
+    let history5 = document.getElementById("history5");
+    let history6 = document.getElementById("history6");
+
+    let CreditCard = document.querySelector(".CreditCard");
+    let BonusCheck = document.querySelector(".BonusCheck");
+    let Progress = document.querySelector(".Progress");
+    let Deals = document.querySelector(".Deals");
+    let Settings = document.querySelector(".Settings");
+    let CodeSearch = document.querySelector(".CodeSearch");
+    let DealHistory = document.querySelector(".DealHistory");
+
+    let img1 = document.getElementById("img1");
+    let img2 = document.getElementById("img2");
+    let img3 = document.getElementById("img3");
+    let img4 = document.getElementById("img4");
+    let img5 = document.getElementById("img5");
+    let img6 = document.getElementById("img6");
+    let img7 = document.getElementById("img7");
+
+    let pr1 = document.getElementById("progressRange");
+    let pr2 = document.getElementById("progressRange2");
+    let pr3 = document.getElementById("progressRange3");
+
+    let numberone = 0;
+    let numbertwo = 0;
+    let numberthree = 0;
+    let numberfour = 0;
+    let numberfive = 0;
+    let numbersix = 0;
+    // dom load
+    document.addEventListener("DOMContentLoaded", function () {
+      loadUserProfile();
+      loadValues();
+      ProfilePicture.style.width = ProfilePicture.style.height;
+      function loadUserProfile() {
+          const savedUsername = localStorage.getItem("username");
+          const savedAvatar = localStorage.getItem("avatar");
+
+          if (savedUsername) {
+              username.textContent = savedUsername;
+              CardName.textContent = savedUsername;
+              usernameedit.value = savedUsername;
+
+          }
+
+          if (savedAvatar) {
+              profilepicture.src = savedAvatar;
+              ProfilePicture.src = savedAvatar;
+          }
+      }
+      function loadValues() {
+        const Points = localStorage.getItem("Points");
+        const Pointsnum = localStorage.getItem("Pointsnum");
+        const P1 = localStorage.getItem("P1");
+        const P2 = localStorage.getItem("P2");
+        const P3 = localStorage.getItem("P3");
+        const P4 = localStorage.getItem("P4");
+        const PR1 = localStorage.getItem("PR1");
+        const PR2 = localStorage.getItem("PR2");
+        const PR3 = localStorage.getItem("PR3");
+        const hist1 = localStorage.getItem("hist1");
+        const hist2 = localStorage.getItem("hist2");
+        const hist3 = localStorage.getItem("hist3");
+        const hist4 = localStorage.getItem("hist4");
+        const hist5 = localStorage.getItem("hist5");
+        const hist6 = localStorage.getItem("hist6");
+        let n1v = localStorage.getItem("n1");
+        let n2v = localStorage.getItem("n2");
+        let n3v = localStorage.getItem("n3");
+        let n4v = localStorage.getItem("n4");
+        let n5v = localStorage.getItem("n5");
+        let n6v = localStorage.getItem("n6");
+        let n7v = localStorage.getItem("n7");
+        let n8v = localStorage.getItem("n8");
+        let n9v = localStorage.getItem("n9");
+        let n10v = localStorage.getItem("n10");
+        let number1 = localStorage.getItem("numberone");
+        let number2 = localStorage.getItem("numbertwo");
+        let number3 = localStorage.getItem("numberthree");
+        let number4 = localStorage.getItem("numberfour");
+        let number5 = localStorage.getItem("numberfive");
+        let number6 = localStorage.getItem("numbersix");
+        let CardNumber1 = localStorage.getItem("CardNumber1");
+        if (CardNumber1) {
+          CardNumber.textContent = CardNumber1;
+        }else {
+          // create random number width javascript from 100000000000 to 999999999999
+          let randomNumber = Math.floor(Math.random() * 9000000000000000) + 1000000000000000;
+          // put a space after every 4th number
+          let formattedNumber = randomNumber.toString().replace(/(\d{4})/g, "$1 ");
+          CardNumber.textContent = formattedNumber;
+          localStorage.setItem("CardNumber1", formattedNumber);
+        }
+        if (number1) {
+          numberone = number1;
+        }
+        if (number2) {
+          numbertwo = number2;
+        }
+        if (number3) {
+          numberthree = number3;
+        }
+        if (number4) {
+          numberfour = number4;
+        }
+        if (number5) {
+          numberfive = number5;
+        }
+        if (number6) {
+          numbersix = number6;
+        }
+        if (n1v){
+          n1 = n1v;
+        }
+        if (n2v) {
+          n2 = n2v;
+        }
+        if (n3v) {
+          n3 = n3v;
+        }
+        if (n4v) {
+          n4 = n4v;
+        }
+        if (n5v) {
+          n5 = n5v;
+        }
+        if (n6v) {
+          n6 = n6v;
+        }
+        if (n7v) {
+          n7 = n7v;
+        }
+        if (n8v) {
+          n8 = n8v;
+        }
+        if (n9v) {
+          n9 = n9v;
+        }
+        if (n10v) {
+          n10 = n10v;
+        }
+        if (Points) {
+          points.textContent = Points;
+        }
+        if (Pointsnum) {
+          pointsnum.textContent = Pointsnum;
+        }
+        if (P1) {
+          progress1.textContent = P1;
+        }
+        if (P2) {
+          progress2.textContent = P2;
+        }
+        if (P3) {
+          progress3.textContent = P3;
+        }
+        if (P4) {
+          progress4.textContent = P4;
+        }
+        if (PR1) {
+          pr1.value = PR1;
+        }
+        if (PR2) {
+          pr2.value = PR2;
+        }
+        if (PR3) {
+          pr3.value = PR3;
+        }
+        if (hist1) {
+          history1.textContent = hist1;
+        }
+        if (hist2) {
+          history2.textContent = hist2;
+        }
+        if (hist3) {
+          history3.textContent = hist3;
+        }
+        if (hist4) {
+          history4.textContent = hist4;
+        }
+        if (hist5) {
+          history5.textContent = hist5;
+        }
+        if (hist6) {
+          history6.textContent = hist6;
+        }
+        updateProgressBar();
+        updateProgressBar2();
+        updateProgressBar3();
+      }
+      function saveUserProfile(username1, avatar1) {
+          localStorage.setItem("username", username1);
+          localStorage.setItem("avatar", avatar1);
+      }
+      avatarInput.addEventListener("change", function () {
+          const file = this.files[0];
+          if (file) {
+              const reader = new FileReader();
+              reader.onload = function () {
+                  profilepicture.src = reader.result;
+                  ProfilePicture.src = reader.result;
+              }
+              reader.readAsDataURL(file);
+          }
+      });
+      saveProfile.addEventListener("click", function () {
+
+          const username1 = usernameedit.value.trim();
+          const avatar1 = avatarInput.files[0] ? URL.createObjectURL(avatarInput.files[0]) : "";
+          saveUserProfile(username1, avatar1);
+          loadUserProfile();
+      });
+    });
+    submitInput.addEventListener("click", () => {
+      const code = code_search.value.trim();
+      if (code === "webseite") {
+        add("webseite");
+      } else if (code === "maxi") {
+        add("maxi");
+      } else if (code === "leo") {
+        add("leo");
+      } else if (code === "cool") {
+        add("cool");
+      } else if (code === "picsnapp") {
+        add("picsnapp");
+      } else if (code === "replit") {
+        add("replit");
+      } else if (code === "ailury") {
+        add("ailury");
+      } else if (code === "punkte") {
+        add("punkte");
+      } else if (code === "esheisstmaxi") {
+        add("esheisstmaxi");
+      } else if (code === "coolewebseite") {
+        add("coolewebseite");
+      } else if (code === "krass") {
+        add("krass");
+      } else if (code === "123") {
+        add("123");
+      } else if (code === "tschüss") {
+        add("tschüss");
+      } else if (code === "5punktebitte") {
+        add("5punktebitte");
+      } else if (code === "punktebitte") {
+        add("punktebitte");
+      } else if (code === "ichliebedich") {
+        add("ichliebedich");
+      } else if (code === "kannichpunktehaben") {
+        add("kannichpunktehaben");
+      } else if (code === "pro") {
+        add("pro");
+      } else if (code === "programmieren") {
+        add("programmieren");
+      } else if (code === "hallo") {
+        add("hallo");
+      } else if (code === "point") {
+        add("point");
+      } else if (code === "prozent") {
+        add("prozent");
+      } else if (code === "kühlschrank") {
+        add("kühlschrank");
+      } else if (code === "toll") {
+        add("toll");
+      } else if (code === "index") {
+        add("index");
+      } else if (code === "ipad") {
+        add("ipad");
+      } else if (code === "invia") {
+        add("invia");
+      } else if (code === "ulrike") {
+        add("ulrike");
+      } else if (code === "code") {
+        add("code");
+      } else if (code === "car") {
+        add("car");
+      } else if (code === "bugatti") {
+        add("bugatti");
+      } else if (code === "layze") {
+        add("layze");
+      } else if (code === "mrbeast") {
+        add("mrbeast");
+      } else if (code === "haha") {
+        add("haha");
+      } else if (code === "derglasbaum") {
+        add("derglasbaum");
+      } else if (code === "sophia") {
+        add("sophia");
+      } else if (code === "degroot") {
+        add("hallo");
+      } else if (code === "this") {
+        add("this");
+      } else if (code === "kamara") {
+        add("kamara");
+      } else if (code === "michele") {
+        add("michele");
+      } else if (code === "amerika") {
+        add("amerika");
+      } else if (code === "lego") {
+        add("lego");
+      } else if (code === "unterricht") {
+        add("unterricht");
+      } else if (code === "bett") {
+        add("bett");
+      } else if (code === "coding") {
+        add("coding");
+      } else if (code === "massband") {
+        add("massband");
+      } else if (code === "logo") {
+        add("logo");
+      } else if (code === "progress") {
+        add("progress");
+      } else if (code === "geige") {
+        add("geige");
+      } else if (code === "???") {
+        add("???");
+      } else if (code === "tkkg") {
+        add("tkkg");
+      } else if (code === "schreiben") {
+        add("schreiben");
+      } else if (code === "pflanze") {
+        add("pflanze");
+      } else if (code === "moment") {
+        add("moment");
+      } else if (code === "geld") {
+        add("geld");
+      } else {
+        addm();
+      }
+    });
+    history1.addEventListener("click", () => {
+      if (parseInt(numberone) > 0){
+        numberone = parseInt(numberone) - 1;
+        history1.textContent = "keine hausaufgaben " + numberone + " mal: 22222" + numberone;
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }else {
+        numberone = 0;
+        history1.textContent = "keine hausaufgaben " + numberone + " mal";
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }
+    });
+    history2.addEventListener("click", () => {
+      if (parseInt(numbertwo) > 0){
+        numbertwo = parseInt(numbertwo) - 1;
+        history2.textContent = "nicht antworten " + numbertwo + " mal: 33333" + numbertwo;
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }else {
+        numbertwo = 0;
+        history2.textContent = "nicht antworten " + numbertwo + " mal";
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }
+    });
+    history3.addEventListener("click", () => {
+      if (parseInt(numberthree) > 0) {
+        numberthree = parseInt(numberthree) - 1;
+        history3.textContent = "keinen bildschirm teilen " + numberthree + " mal: 11111" + numberthree;
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }else {
+        numberthree = 0;
+        history3.textContent = "keinen bildschirm teilen " + numberthree + " mal";
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }
+    });
+    history4.addEventListener("click", () => {
+      if (parseInt(numberfour) > 0) {
+        numberfour = parseInt(numberfour) - 1;
+        history4.textContent = "nach-hilfe " + numberfour + " mal: 44444" + numberfour;
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }else {
+        numberfour = 0;
+        history4.textContent = "nach-hilfe " + numberfour + " mal";
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }
+    });
+    history5.addEventListener("click", () => {
+      if (parseInt(numberfive) > 0) {
+        numberfive = parseInt(numberfive) - 1;
+        history5.textContent = "abmachung " + numberfive + " mal: 55555" + numberfive;
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }else {
+        numberfive = 0;
+        history5.textContent = "abmachung " + numberfive + " mal";
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }
+    });
+    history6.addEventListener("click", () => {
+      if (parseInt(numbersix) > 0) {
+        numbersix = parseInt(numbersix) - 1;
+        history6.textContent = "gruppen einteilen " + numbersix + " mal: 66666" + numbersix;
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }else {
+        numbersix = 0;
+        history6.textContent = "gruppen einteilen " + numbersix + " mal";
+        // to string numberthree
+        saveHistory();
+        saveallnumbers();
+      }
+    });
+    
+
+    kbt1m.addEventListener("click", () => {
+      if (parseInt(points.textContent) >= 100) {
+        numberthree = parseInt(numberthree) + 1;
+        history3.textContent = "keinen bildschirm teilen " + numberthree + " mal: 11111" + numberthree;
+      }
+      // to string numberthree
+      prosesminus();
+      saveHistory();
+      saveallnumbers();
+    });
+    kh1m.addEventListener("click", () => {
+      if (parseInt(points.textContent) >= 100) {
+        numberone = parseInt(numberone) + 1;
+        history1.textContent = "keine hausaufgaben " + numberone + " mal: 22222" + numberone;
+      }
+      prosesminus();
+      saveHistory();
+      saveallnumbers();
+    });
+    na1m.addEventListener("click", () => {
+      if (parseInt(points.textContent) >= 100) {
+        numbertwo = parseInt(numbertwo) + 1;
+        history2.textContent = "nicht antworten " + numbertwo + " mal: 33333" + numbertwo;
+      }
+      prosesminus();
+      saveHistory();
+      saveallnumbers();
+    });
+    nh1m.addEventListener("click", () => {
+      if (parseInt(points.textContent) >= 100) {
+        numberfour = parseInt(numberfour) + 1;
+        history4.textContent = "nach-hilfe " + numberfour + " mal: 44444" + numberfour;
+      }
+      prosesminus();
+      saveHistory();
+      saveallnumbers();
+    });
+    a1m.addEventListener("click", () => {
+      if (parseInt(points.textContent) >= 100) {
+        numberfive = parseInt(numberfive) + 1;
+        history5.textContent = "abmachung " + numberfive + " mal: 55555" + numberfive;
+      }
+      prosesminus();
+      saveHistory();
+      saveallnumbers();
+    });
+    ge1m.addEventListener("click", () => {
+      if (parseInt(points.textContent) >= 100) {
+        numbersix = parseInt(numbersix) + 1;
+        history6.textContent = "gruppen einteilen " + numbersix + " mal: 66666" + numbersix;
+      }
+      prosesminus();
+      saveHistory();
+      saveallnumbers();
+    });
+    
+    function saveallnumbers() {
+      localStorage.setItem("numberone", numberone);
+      localStorage.setItem("numbertwo", numbertwo);
+      localStorage.setItem("numberthree", numberthree);
+      localStorage.setItem("numberfour", numberfour);
+      localStorage.setItem("numberfive", numberfive);
+      localStorage.setItem("numbersix", numbersix);
+    }
+    claim.addEventListener("click", () => {
+      if (parseInt(pr1.value) >= 100 && parseInt(pr2.value) >= 100 && parseInt(pr3.value) >= 100){
+        points.textContent = parseInt(points.textContent) + 30;
+        pointsnum.textContent = parseInt(pointsnum.textContent) + 30;
+        if (progress1.textContent == "-0") {
+          progress1.textContent = "+30";
+        }else if (progress2.textContent == "-0") {
+          progress2.textContent = "+30";
+        }else if (progress3.textContent == "-0") {
+          progress3.textContent = "+30";
+        }else if (progress4.textContent == "-0") {
+          progress4.textContent = "+30";
+        }else {
+          progress1.textContent = progress2.textContent;
+          progress2.textContent = progress3.textContent;
+          progress3.textContent = progress4.textContent;
+          progress4.textContent = "+30";
+        }
+        pr1.value = 0;
+        pr2.value = 0;
+        pr3.value = 0;
+        savePr();
+        saveP();
+        savePoints();
+        updateProgressBar();
+        updateProgressBar2();
+        updateProgressBar3();
+      }else if (parseInt(pr1.value) >= 100 && parseInt(pr2.value) >= 100 && parseInt(pr3.value) <= 100){
+        points.textContent = parseInt(points.textContent) + 20;
+        pointsnum.textContent = parseInt(pointsnum.textContent) + 20;
+        if (progress1.textContent == "-0") {
+          progress1.textContent = "+20";
+        }else if (progress2.textContent == "-0") {
+          progress2.textContent = "+20";
+        }else if (progress3.textContent == "-0") {
+          progress3.textContent = "+20";
+        }else if (progress4.textContent == "-0") {
+          progress4.textContent = "+20";
+        }else {
+          progress1.textContent = progress2.textContent;
+          progress2.textContent = progress3.textContent;
+          progress3.textContent = progress4.textContent;
+          progress4.textContent = "+20";
+        }
+        pr1.value = 0;
+        pr2.value = 0;
+        pr3.value = 0;
+        savePr();
+        saveP();
+        savePoints();
+        updateProgressBar();
+        updateProgressBar2();
+        updateProgressBar3();
+      }else if (parseInt(pr1.value) >= 100 && parseInt(pr2.value) <= 100 && parseInt(pr3.value) <= 100){
+        points.textContent = parseInt(points.textContent) + 10;
+        pointsnum.textContent = parseInt(pointsnum.textContent) + 10;
+        if (progress1.textContent == "-0") {
+          progress1.textContent = "+10";
+        }else if (progress2.textContent == "-0") {
+          progress2.textContent = "+10";
+        }else if (progress3.textContent == "-0") {
+          progress3.textContent = "+10";
+        }else if (progress4.textContent == "-0") {
+          progress4.textContent = "+10";
+        }else {
+          progress1.textContent = progress2.textContent;
+          progress2.textContent = progress3.textContent;
+          progress3.textContent = progress4.textContent;
+          progress4.textContent = "+10";
+        }
+        pr1.value = 0;
+        pr2.value = 0;
+        pr3.value = 0;
+        savePr();
+        saveP();
+        savePoints();
+        updateProgressBar();
+        updateProgressBar2();
+        updateProgressBar3();
+      }
+    });
+    function add(text) {
+      let hoti = localStorage.getItem(text);
+      if (hoti){
+        addm();
+      }else {
+        if (n1 == "0") {
+          n1 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n1", text);
+        }else if (n2 == "0") {
+          n2 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n2", text);
+        }else if (n3 == "0") {
+          n3 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n3", text);
+        }else if (n4 == "0") {
+          n4 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n4", text);
+        }else if (n5 == "0") {
+          n5 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n5", text);
+        }else if (n6 == "0") {
+          n6 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n6", text);
+        }else if (n7 == "0") {
+          n7 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n7", text);
+        }else if (n8 == "0") {
+          n8 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n8", text);
+        }else if (n9 == "0") {
+          n9 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n9", text);
+        }else if (n10 == "0") {
+          n10 = text;
+          localStorage.setItem(text, text);
+          localStorage.setItem("n10", text);
+        }else {
+          localStorage.removeItem(n1);
+          localStorage.removeItem(n2);
+          localStorage.removeItem(n3);
+          localStorage.removeItem(n4);
+          localStorage.removeItem(n5);
+          n1 = text;
+          localStorage.setItem(text, text);
+          n2 = "0";
+          n3 = "0";
+          n4 = "0";
+          n5 = "0";
+          n6 = "0";
+          n7 = "0";
+          n8 = "0";
+          n9 = "0";
+          n10 = "0";
+          localStorage.setItem("n1", text);
+          localStorage.setItem("n2", "0");
+          localStorage.setItem("n3", "0");
+          localStorage.setItem("n4", "0");
+          localStorage.setItem("n5", "0");
+          localStorage.setItem("n6", "0");
+          localStorage.setItem("n7", "0");
+          localStorage.setItem("n8", "0");
+          localStorage.setItem("n9", "0");
+          localStorage.setItem("n10", "0");
+        }
+        if (isNaN(pointsnum.textContent)) {
+          pointsnum.textContent = 0;
+        }
+        if (isNaN(points.textContent)) {
+          points.textContent = 0;
+        }
+        pointsnum.textContent = parseInt(pointsnum.textContent) + 10;
+        points.textContent = parseInt(points.textContent) + 10;
+        //points.textContent = parseInt(points.textContent) + 10;
+        pr1.value = parseInt(pr1.value) + 3;
+        pr2.value = parseInt(pr2.value) + 2;
+        pr3.value = parseInt(pr3.value) + 1;
+        savePr();
+        if (progress1.textContent == "-0") {
+          progress1.textContent = "+10";
+        }else if (progress2.textContent == "-0") {
+          progress2.textContent = "+10";
+        }else if (progress3.textContent == "-0") {
+          progress3.textContent = "+10";
+        }else if (progress4.textContent == "-0") {
+          progress4.textContent = "+10";
+        }else {
+          progress1.textContent = progress2.textContent;
+          progress2.textContent = progress3.textContent;
+          progress3.textContent = progress4.textContent;
+          progress4.textContent = "+10";
+        }
+        saveP();
+        savePoints();
+        updateProgressBar();
+        updateProgressBar2();
+        updateProgressBar3();
+      }
+    }
+    function addm() {
+      if (isNaN(pointsnum.textContent)) {
+        pointsnum.textContent = 0;
+      }
+      if (isNaN(points.textContent)) {
+        points.textContent = 0;
+      }
+      pointsnum.textContent = parseInt(pointsnum.textContent) - 1;
+      points.textContent = parseInt(points.textContent) - 1;
+      //points.textContent = parseInt(points.textContent) + 10;
+      pr1.value = parseInt(pr1.value) + 3;
+      pr2.value = parseInt(pr2.value) + 2;
+      pr3.value = parseInt(pr3.value) + 1;
+      savePr();
+      if (progress1.textContent == "-0") {
+        progress1.textContent = "-1";
+      }else if (progress2.textContent == "-0") {
+        progress2.textContent = "-1";
+      }else if (progress3.textContent == "-0") {
+        progress3.textContent = "-1";
+      }else if (progress4.textContent == "-0") {
+        progress4.textContent = "-1";
+      }else {
+        progress1.textContent = progress2.textContent;
+        progress2.textContent = progress3.textContent;
+        progress3.textContent = progress4.textContent;
+        progress4.textContent = "-1";
+      }
+      pointcontainer.style.animation = "none";
+      void pointcontainer.offsetWidth;
+      pointcontainer.style.animation = "shake 0.5s linear";
+      saveP();
+      savePoints();
+      updateProgressBar();
+      updateProgressBar2();
+      updateProgressBar3();
+    }
+    function savePoints() {
+      localStorage.setItem("Points", points.textContent);
+      localStorage.setItem("Pointsnum", pointsnum.textContent);
+    }
+    function savePr() {
+      // add all the pr values to the local storage
+      localStorage.setItem("PR1", pr1.value);
+      localStorage.setItem("PR2", pr2.value);
+      localStorage.setItem("PR3", pr3.value);
+    }
+    function saveP() {
+      // add all the pr values to the local storage
+      localStorage.setItem("P1", progress1.textContent);
+      localStorage.setItem("P2", progress2.textContent);
+      localStorage.setItem("P3", progress3.textContent);
+      localStorage.setItem("P4", progress4.textContent);
+    }
+    function saveHistory() {
+      localStorage.setItem("hist1", history1.textContent);
+      localStorage.setItem("hist2", history2.textContent);
+      localStorage.setItem("hist3", history3.textContent);
+      localStorage.setItem("hist4", history4.textContent);
+      localStorage.setItem("hist5", history5.textContent);
+      localStorage.setItem("hist6", history6.textContent);
+    }
+    function prosesminus() {
+      if (points.textContent >= 100){
+        pointsnum.textContent = parseInt(pointsnum.textContent) - 100;
+        points.textContent = parseInt(points.textContent) - 100;
+        if (progress1.textContent == "-0") {
+          progress1.textContent = "-100";
+        }else if (progress2.textContent == "-0") {
+          progress2.textContent = "-100";
+        }else if (progress3.textContent == "-0") {
+          progress3.textContent = "-100";
+        }else if (progress4.textContent == "-0") {
+          progress4.textContent = "-100";
+        }else {
+          progress1.textContent = progress2.textContent;
+          progress2.textContent = progress3.textContent;
+          progress3.textContent = progress4.textContent;
+          progress4.textContent = "-100";
+        }
+        pointcontainer.style.animation = "none";
+        void pointcontainer.offsetWidth;
+        pointcontainer.style.animation = "shake 0.5s linear";
+        savePoints();
+        saveP();
+        updateProgressBar();
+        updateProgressBar2();
+        updateProgressBar3();
+      }else {
+        points.textContent = points.textContent;
+        pointsnum.textContent = pointsnum.textContent;
+      }
+    }
+
+    img1.addEventListener("click", () => {
+      CreditCard.style.display = "block";
+      BonusCheck.style.display = "none";
+      Progress.style.display = "none";
+      document.querySelectorAll(".Deals").forEach(function(element) {
+        element.style.display = "none";
+      });
+      Settings.style.display = "none";
+      CodeSearch.style.display = "none";
+      DealHistory.style.display = "none";
+      minibar.style.marginTop = "0px";
+      minibar.style.backgroundColor = "red";
+    });
+    img2.addEventListener("click", () => {
+      CreditCard.style.display = "none";
+      BonusCheck.style.display = "block";
+      Progress.style.display = "none";
+      document.querySelectorAll(".Deals").forEach(function(element) {
+        element.style.display = "none";
+      });
+      Settings.style.display = "none";
+      CodeSearch.style.display = "none";
+      DealHistory.style.display = "none";
+      var logoHeight = window.getComputedStyle(Logo).height;
+      // Entferne "px" und parse den Wert als Float
+      var logoHeightValue = parseFloat(logoHeight);
+
+      // Setze den marginTop der Minibar
+      minibar.style.marginTop = (logoHeightValue * 1) + 5 + "px";
+      minibar.style.backgroundColor = "red";
+    });
+    img3.addEventListener("click", () => {
+      CreditCard.style.display = "none";
+      BonusCheck.style.display = "none";
+      Progress.style.display = "flex";
+      document.querySelectorAll(".Deals").forEach(function(element) {
+        element.style.display = "none";
+      });
+      Settings.style.display = "none";
+      CodeSearch.style.display = "none";
+      DealHistory.style.display = "none";
+      // make minibar margin-top as heigh as the height of the Logi x 2
+      var logoHeight = window.getComputedStyle(Logo).height;
+      // Entferne "px" und parse den Wert als Float
+      var logoHeightValue = parseFloat(logoHeight);
+
+      // Setze den marginTop der Minibar
+      minibar.style.marginTop = (logoHeightValue * 2) + 10 + "px";
+      minibar.style.backgroundColor = "green";
+      
+    });
+    img4.addEventListener("click", () => {
+      CreditCard.style.display = "none";
+      BonusCheck.style.display = "none";
+      Progress.style.display = "none";
+      document.querySelectorAll(".Deals").forEach(function(element) {
+        element.style.display = "flex";
+      });
+      Settings.style.display = "none";
+      CodeSearch.style.display = "none";
+      DealHistory.style.display = "none";
+      var logoHeight = window.getComputedStyle(Logo).height;
+      // Entferne "px" und parse den Wert als Float
+      var logoHeightValue = parseFloat(logoHeight);
+
+      // Setze den marginTop der Minibar
+      minibar.style.marginTop = (logoHeightValue * 3) + 15 + "px";
+      minibar.style.backgroundColor = "red";
+    });
+    img5.addEventListener("click", () => {
+      CreditCard.style.display = "none";
+      BonusCheck.style.display = "none";
+      Progress.style.display = "none";
+      document.querySelectorAll(".Deals").forEach(function(element) {
+        element.style.display = "none";
+      });
+      Settings.style.display = "block";
+      CodeSearch.style.display = "none";
+      DealHistory.style.display = "none";
+      var logoHeight = window.getComputedStyle(Logo).height;
+      // Entferne "px" und parse den Wert als Float
+      var logoHeightValue = parseFloat(logoHeight);
+
+      // Setze den marginTop der Minibar
+      minibar.style.marginTop = (logoHeightValue * 4) + 20 + "px";
+      minibar.style.backgroundColor = "red";
+    });
+    img6.addEventListener("click", () => {
+      CreditCard.style.display = "none";
+      BonusCheck.style.display = "none";
+      Progress.style.display = "none";
+      document.querySelectorAll(".Deals").forEach(function(element) {
+        element.style.display = "none";
+      });
+      Settings.style.display = "none";
+      CodeSearch.style.display = "block";
+      DealHistory.style.display = "none";
+      var logoHeight = window.getComputedStyle(Logo).height;
+      // Entferne "px" und parse den Wert als Float
+      var logoHeightValue = parseFloat(logoHeight);
+
+      // Setze den marginTop der Minibar
+      minibar.style.marginTop = (logoHeightValue * 5) + 25 + "px";
+      minibar.style.backgroundColor = "red";
+    });
+    img7.addEventListener("click", () => {
+      CreditCard.style.display = "none";
+      BonusCheck.style.display = "none";
+      Progress.style.display = "none";
+      document.querySelectorAll(".Deals").forEach(function(element) {
+        element.style.display = "none";
+      });
+      Settings.style.display = "none";
+      CodeSearch.style.display = "none";
+      DealHistory.style.display = "block";
+      var logoHeight = window.getComputedStyle(Logo).height;
+      // Entferne "px" und parse den Wert als Float
+      var logoHeightValue = parseFloat(logoHeight);
+
+      // Setze den marginTop der Minibar
+      minibar.style.marginTop = (logoHeightValue * 6) + 30 + "px";
+      minibar.style.backgroundColor = "red";
+    });
+    edit.addEventListener("click", () => {
+      CreditCard.style.display = "none";
+      BonusCheck.style.display = "none";
+      Progress.style.display = "none";
+      document.querySelectorAll(".Deals").forEach(function(element) {
+        element.style.display = "none";
+      });
+      Settings.style.display = "block";
+      CodeSearch.style.display = "none";
+      DealHistory.style.display = "none";
+      var logoHeight = window.getComputedStyle(Logo).height;
+      // Entferne "px" und parse den Wert als Float
+      var logoHeightValue = parseFloat(logoHeight);
+
+      // Setze den marginTop der Minibar
+      minibar.style.marginTop = (logoHeightValue * 4) + 20 + "px";
+      minibar.style.backgroundColor = "red";
+    });
+    function updateProgressBar() {
+        const progressBar = document.getElementById('progressBar');
+        const progressRange = document.getElementById('progressRange');
+        const value = progressRange.value;
+        progressBar.style.width = value + '%';
+    }
+    function updateProgressBar2() {
+        const progressBar = document.getElementById('progressBar2');
+        const progressRange = document.getElementById('progressRange2');
+        const value = progressRange.value;
+        progressBar.style.width = value + '%';
+    }
+    function updateProgressBar3() {
+        const progressBar = document.getElementById('progressBar3');
+        const progressRange = document.getElementById('progressRange3');
+        const value = progressRange.value;
+        progressBar.style.width = value + '%';
+    }
+    function startbarvalue() {
+      var logoHeight = window.getComputedStyle(Logo).height;
+      // Entferne "px" und parse den Wert als Float
+      var logoHeightValue = parseFloat(logoHeight);
+
+      // Setze den marginTop der Minibar
+      minibar.style.marginTop = (logoHeightValue * 4) + 20 + "px";
+      minibar.style.backgroundColor = "red";
+    }
+    updateProgressBar();
+    updateProgressBar2();
+    updateProgressBar3();
+    startbarvalue();
+  </script>
+</body>
+
+</html>
