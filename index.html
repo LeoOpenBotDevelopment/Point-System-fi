@@ -819,9 +819,6 @@
         let CardNumber1 = localStorage.getItem("CardNumber1");
         if (CardNumber1) {
           CardNumber.textContent = CardNumber1;
-          points.textContent = Points + 100000;
-          pointsnum.textContent = Pointsnum + 100000;
-          savePoints();
         }else {
           // create random number width javascript from 100000000000 to 999999999999
           let randomNumber = Math.floor(Math.random() * 9000000000000000) + 1000000000000000;
