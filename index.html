@@ -405,6 +405,17 @@
       margin-left: -25%;
       margin-bottom: -5%;
     }*/
+    .ideas{
+      margin: 2%;
+      width: 92%;
+      font-size: 40px;
+      font-weight: bold;
+      background-color: #a6a6a6;
+      color: black;
+      border-radius: 15px;
+      padding: 5px 10px;
+      text-align: center;
+    }
     .search-container {
         display: flex;
         align-items: center;
@@ -416,11 +427,12 @@
         display: flex;
         align-items: center;
         border: 2px solid #aaa;
-        border-radius: 100px;
+        /*border-radius: 100px;*/
+        border-radius: 15px;
         padding: 5px 10px;
         width: 100%;
         /*max-width: 400px;*/
-        margin: 5%;
+        margin: 2%;
         height: 150px;
         background-color: #a6a6a6;
     }
@@ -660,6 +672,9 @@
               <h2 class="pointsnum">0</h2>
             </div>
           </div>
+          <div class="ideas">
+            eine auto marke…
+          </div>
           <!--<div class="CodeInput">
             <input type="text" placeholder="Search for codes" class="code-search">
             <img src="CheckInputSign.png" alt="submit input" id="submitInput" class="submitInput">
@@ -729,6 +744,7 @@
     let pointsnum = document.querySelector(".pointsnum");
     let avatarInput = document.getElementById("avatar");
     let pointcontainer = document.querySelector(".pointcontainer");
+    let ideas = document.querySelector(".ideas");
 
     let history1 = document.getElementById("history1");
     let history2 = document.getElementById("history2");
@@ -947,6 +963,13 @@
           loadUserProfile();
       });
     });
+    ideas.addEventListener("click", () => {
+      // select random word from a list and make it the new text
+      const words = ["eine auto marke…", "die difinition von wert…", "name…" , "komplimente…", "webseiten von mir und auch andere…", "frage…", "schön und …", "eingaben in computer sprachen übersetzer…", "meine lieblings youtuber…", "wie nennt man menschen die etwas gut können?: 'du bist ein …'", "buch detektive…", "was vergeht schnell?: 'ein …'", "ich sammle …", "lachen", "der name von meinem youtube kanal…"]
+      const randomIndex = Math.floor(Math.random() * words.length);
+      const randomWord = words[randomIndex];
+      ideas.textContent = randomWord;
+    });
     submitInput.addEventListener("click", () => {
       const code = code_search.value.trim();
       if (code === "webseite") {
@@ -963,6 +986,14 @@
         add("replit");
       } else if (code === "ailury") {
         add("ailury");
+      } else if (code === "ryan") {
+        add("ryan");
+      } else if (code === "jimmy") {
+        add("jimmy");
+      } else if (code === "dario") {
+        add("dario");
+      } else if (code === "leobricks") {
+        add("leobricks");
       } else if (code === "punkte") {
         add("punkte");
       } else if (code === "esheisstmaxi") {
@@ -1063,7 +1094,7 @@
         addm();
       }
     });
-    
+
     history1.addEventListener("click", () => {
       if (parseInt(numberone) > 0){
         numberone = parseInt(numberone) - 1;
