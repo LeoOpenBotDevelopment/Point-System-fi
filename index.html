@@ -765,62 +765,6 @@
     let numbersix = 0;
     // dom load
     document.addEventListener("DOMContentLoaded", function () {
-      localStorage.removeItem("webseite");
-      localStorage.removeItem("maxi");
-      localStorage.removeItem("leo");
-      localStorage.removeItem("cool");
-      localStorage.removeItem("picsnapp");
-      localStorage.removeItem("replit");
-      localStorage.removeItem("ailury");
-      localStorage.removeItem("punkte");
-      localStorage.removeItem("esheisstmaxi");
-      localStorage.removeItem("coolewebseite");
-      localStorage.removeItem("krass");
-      localStorage.removeItem("123");
-      localStorage.removeItem("tschüss");
-      localStorage.removeItem("5punktebitte");
-      localStorage.removeItem("punktebitte");
-      localStorage.removeItem("ichliebedich");
-      localStorage.removeItem("kannichpunktehaben");
-      localStorage.removeItem("pro");
-      localStorage.removeItem("programmieren");
-      localStorage.removeItem("hallo");
-      localStorage.removeItem("point");
-      localStorage.removeItem("prozent");
-      localStorage.removeItem("kühlschrank");
-      localStorage.removeItem("toll");
-      localStorage.removeItem("index");
-      localStorage.removeItem("ipad");
-      localStorage.removeItem("invia");
-      localStorage.removeItem("ulrike");
-      localStorage.removeItem("code");
-      localStorage.removeItem("car");
-      localStorage.removeItem("bugatti");
-      localStorage.removeItem("layze");
-      localStorage.removeItem("mrbeast");
-      localStorage.removeItem("haha");
-      localStorage.removeItem("derglasbaum");
-      localStorage.removeItem("sophia");
-      localStorage.removeItem("degroot");
-      localStorage.removeItem("this");
-      localStorage.removeItem("kamara");
-      localStorage.removeItem("michele");
-      localStorage.removeItem("amerika");
-      localStorage.removeItem("lego");
-      localStorage.removeItem("unterricht");
-      localStorage.removeItem("bett");
-      localStorage.removeItem("coding");
-      localStorage.removeItem("massband");
-      localStorage.removeItem("logo");
-      localStorage.removeItem("progress");
-      localStorage.removeItem("geige");
-      localStorage.removeItem("???");
-      localStorage.removeItem("tkkg");
-      localStorage.removeItem("schreiben");
-      localStorage.removeItem("pflanze");
-      localStorage.removeItem("moment");
-      localStorage.removeItem("geld");
-
       loadUserProfile();
       loadValues();
       ProfilePicture.style.width = ProfilePicture.style.height;
@@ -1360,7 +1304,8 @@
     function add(text) {
       let hoti = localStorage.getItem(text);
       if (hoti){
-        addm();
+        savePoints();
+        alert("you can't repeat this password yet");
       }else {
         if (n1 == "0") {
           n1 = text;
